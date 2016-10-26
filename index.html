@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/skeleton.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<title>Toko IAK </title>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<br/>
+			<div class="twelve columns"><h1>TOKO LUKISAN IAK</h1></div>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="four columns">
+				<img id="myImg" src="img_lights.jpg" alt="Lukisan Cahaya Alam" width="300" height="400">
+			</div>
+			<div id="myModal" class="modal">
+			<p class="close">x</p>
+				<img class="modal-content" id="img01">
+				<div id="caption"></div>
+			</div>
+			<div class="eight columns">
+				<h3> Lukisan Cahaya Alam</h3> </br>
+				<h4> Detail Produk </h4>
+				<p> Ini adalah lukisan yang diciptakan oleh seniman kuno. Lukisan ini dibuat dari cat warna alami yang dibuat dari batuan kuno di daerah Situgintung.</p>
+
+				<p>
+				<b>Keterangan:</b></br>
+				- Kode: Lukisan Pemandangan E7 </br>
+				- Ukuran: 60 x 80 cm</br>
+				- Kanvas saja, pengiriman digulung.</br>
+				- Produk ready silahkan langsung klik Beli</br></br>
+				<b>- Berat : <span id="berat">100</span><span> gr</span></br></b>
+				</p>
+			<div>
+			<p id="result"></p>
+			<p>
+			<b>Harga Barang</b> : <span id="barang">45000</span></br>
+			<b>Biaya Kirim</b> : <span id="ongkir">0</span></br>
+			<b>Total Biaya </b>: <span id="total"></span></br>
+			</p> <br><br>
+			<button>
+				Lanjutkan pembayaran
+			</button>
+			<hr/>
+		</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- <form method="POST" action="gettotal.php"> -->
+			<div class="four columns">
+				Asal<br/>
+				<select id="oriprovince">
+					<option>Provinsi</option>
+				</select>
+				<br/>
+				<select name="oricity" id="oricity">
+					<option>Kota</option>
+				</select>			
+			</div>
+			<div class="four columns">
+				Tujuan<br/>
+				<select id="desprovince">
+					<option>Provinsi</option>
+				</select>
+				<br/>
+				<select name="descity" id="descity">
+					<option>Kota</option>
+				</select> 
+			</div>
+
+			<div class="two columns">
+				Layanan<br/>
+				<select name="service" id="service">
+					<option value disabled selected>Pilih Kurir</option>
+					<option value="jne">JNE</option>
+					<option value="pos">POS</option>
+					<option value="tiki">TIKI</option>
+				</select> 
+				<br/>
+<!-- 				Berat (gram)<br/>
+				<input name="weight"  style="width:100px" id="berat" type="number" placeholder=Ini harus diisi” required> -->
+			</div>
+			<div class="two columns">
+				<br/>
+				<button type="button" onclick="cekHarga()">Cek Harga</button> 
+			</div>
+			<!-- </form> -->
+		</div>
+
+		<div class="row">
+			<div class="twelve columns"><p>Daftar Kurir</p></div>
+			
+			<hr/>
+			<table class="twelve columns">
+				<thead>
+					<tr>
+						<th>Kurir</th>
+						<th>Servis</th>
+						<th>Deskripsi Servis</th>
+						<th>Lama Kirim (hari)</th>
+						<th>Total Biaya (Rp)</th>
+						<th>Pilih</th>
+					</tr>
+				</thead>
+				<tbody id="resultsbox"></tbody>
+			</table>
+		</div>
+
+	</div>
+</body>
+</html>
